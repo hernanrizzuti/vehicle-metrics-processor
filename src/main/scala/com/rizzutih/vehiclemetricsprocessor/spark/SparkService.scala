@@ -11,9 +11,9 @@ class SparkService(val sparkSessionConfig: SparkSessionConfig) extends Logging {
 
   def loadCsvDataset(location: String): DataFrame = {
     Logger.info("Loading parquet dataset...")
-      sparkSession.read.format("csv")
-        .options(Map("inferSchema"->"true","delimiter"->",","header"->"true"))
-        .load(location)
+    sparkSession.read.format("csv")
+      .options(Map("inferSchema" -> "true", "delimiter" -> ",", "header" -> "true"))
+      .load(location)
   }
 
   def executeSQL(sql: String): DataFrame = {

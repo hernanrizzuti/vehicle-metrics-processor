@@ -1,6 +1,6 @@
 package com.rizzutih.vehiclemetricsprocessor
 
-import com.rizzutih.vehiclemetricsprocessor.spark.{LocalSparkSessionConfig, SparkProcessorService, SparkService}
+import com.rizzutih.vehiclemetricsprocessor.spark.{LocalSparkSessionConfig, MetricService, SparkService}
 
 object VehicleMetricsProcessor extends App {
 
@@ -9,7 +9,7 @@ object VehicleMetricsProcessor extends App {
   def run(args: Array[String]): Unit = {
     print(classOf[org.apache.commons.lang3.SystemUtils].getResource("SystemUtils.class"))
     val sparkService: SparkService = new SparkService(new LocalSparkSessionConfig())
-    val sparkProcessorService: SparkProcessorService = new SparkProcessorService(sparkService)
-    sparkProcessorService.harvestDataset()
+    val sparkProcessorService: MetricService = new MetricService(sparkService)
+    sparkProcessorService.calculateMetric()
   }
 }
