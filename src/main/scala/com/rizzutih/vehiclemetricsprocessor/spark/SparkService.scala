@@ -20,8 +20,9 @@ class SparkService(val sparkSessionConfig: SparkSessionConfig) extends Logging {
     sparkSession.sql(sql)
   }
 
-  def write(dataFrame: DataFrame, location: String): Unit = {
-    dataFrame.write.mode(SaveMode.Overwrite).parquet(location)
+  def write(dataFrame: DataFrame,
+            location: String): Unit = {
+    dataFrame.repartition(1).write.mode(SaveMode.Overwrite).parquet(location)
   }
 
   def stop(): Unit = {

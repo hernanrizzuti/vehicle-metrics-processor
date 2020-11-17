@@ -23,6 +23,10 @@ class LocalSparkSessionConfig() extends SparkSessionConfig {
   override def sparkSession(): SparkSession = {
 
     val sparkSession = super.sparkSession()
+    val hadoopConfig = sparkSession.sparkContext.hadoopConfiguration
+    sparkSession.sql("set spark.sql.caseSensitive=true")
+    hadoopConfig.set("mapreduce.fileoutputcommitter.marksuccessfuljobs", "false")
+    hadoopConfig.set("parquet.enable.summary-metadata", "false")
 
     sparkSession
   }
