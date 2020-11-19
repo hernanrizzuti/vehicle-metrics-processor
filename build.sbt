@@ -9,6 +9,7 @@ libraryDependencies += "org.apache.spark" %% "spark-sql" % "3.0.1" % Provided
 libraryDependencies += "org.apache.hadoop" % "hadoop-common" % "3.3.0"
 libraryDependencies += "org.apache.hadoop" % "hadoop-aws" % "3.3.0"
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.2"
+libraryDependencies += "org.typelevel" %% "cats-core" % "2.0.0"
 
 libraryDependencies += "io.findify" %% "s3mock" % "0.2.5" % Test
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.2" % Test

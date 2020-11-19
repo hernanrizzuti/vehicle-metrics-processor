@@ -1,7 +1,8 @@
 package com.rizzutih.vehiclemetricsprocessor.spark
 
 import com.rizzutih.test.UnitSpec
-import org.apache.spark.sql.{DataFrame, DataFrameReader, DataFrameWriter, Dataset, Row, SaveMode, SparkSession}
+import com.rizzutih.vehiclemetricsprocessor.spark.config.SparkSessionConfig
+import org.apache.spark.sql._
 
 class SparkServiceTest extends UnitSpec {
   private val sparkSessionConfig: SparkSessionConfig = mock[SparkSessionConfig]
@@ -52,5 +53,9 @@ class SparkServiceTest extends UnitSpec {
     dataFrameWriter.parquet(location) was called
   }
 
+  "stop" should "call stop" in {
+    sparkService.stop()
 
+    session.stop() was called
+  }
 }

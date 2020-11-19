@@ -1,5 +1,6 @@
 package com.rizzutih.vehiclemetricsprocessor.spark
 
+import com.rizzutih.vehiclemetricsprocessor.spark.config.SparkSessionConfig
 import com.rizzutih.vehiclemetricsprocessor.utils.Logging
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 

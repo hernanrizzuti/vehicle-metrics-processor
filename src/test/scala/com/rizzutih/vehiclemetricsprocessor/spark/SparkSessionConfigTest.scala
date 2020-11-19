@@ -1,6 +1,7 @@
 package com.rizzutih.vehiclemetricsprocessor.spark
 
 import com.rizzutih.test.UnitSpec
+import com.rizzutih.vehiclemetricsprocessor.spark.config.LocalSparkSessionConfig
 
 class SparkSessionConfigTest extends UnitSpec {
 
