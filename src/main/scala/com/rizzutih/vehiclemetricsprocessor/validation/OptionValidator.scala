@@ -13,7 +13,7 @@ object OptionValidator {
                   value: String): ValidatedNel[InvalidParameter, Environment.Value] = {
 
     if (value.isEmpty) {
-      InvalidParameter(s"$key is empty").invalidNel
+      return InvalidParameter(s"$key is empty").invalidNel
     }
     val option: Option[Environment.Value] = Environment.withNameOpt(value)
     if (option.isDefined) {

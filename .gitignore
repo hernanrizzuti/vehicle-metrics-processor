@@ -4,6 +4,7 @@ project/project/
 project/target/
 target/
 build/
+resources/outputFiles/
 
 # eclipse
 build

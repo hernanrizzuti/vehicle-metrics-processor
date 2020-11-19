@@ -28,4 +28,10 @@ class OptionValidatorTest extends UnitSpec {
     validated shouldBe Invalid(NonEmptyList(InvalidParameter("Incorrect format for option = env"), Nil))
   }
 
+  it should "return InvalidParameter when env is empty" in {
+    val validated = OptionValidator.validateEnv("env", "")
+    validated.isInvalid shouldBe true
+    validated shouldBe Invalid(NonEmptyList(InvalidParameter("env is empty"), Nil))
+  }
+
 }
